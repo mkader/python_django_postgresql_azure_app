@@ -9,9 +9,9 @@
             "driver": "PostgreSQL",
             "server": "localhost",
             "port": 5432,
-            "database": "postgres",
-            "username": "admin",
-            "password": "LocalPasswordOnly"
+            "database": "app",
+            "username": "app_user",
+            "password": "app_password"
         },
         {
             "pgOptions": {
