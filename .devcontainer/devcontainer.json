@@ -1,6 +1,6 @@
 {
     "name": "python-db-copilot",
-	"dockerComposeFile": "docker-compose.yaml",
+	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
 	"forwardPorts": [5432],
