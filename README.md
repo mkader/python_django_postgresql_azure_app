@@ -1,0 +1,1 @@
+# python_django_postgresql_azure_app
