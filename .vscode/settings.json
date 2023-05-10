@@ -12,19 +12,6 @@
             "database": "app",
             "username": "app_user",
             "password": "app_password"
-        },
-        {
-            "pgOptions": {
-                "ssl": true
-            },
-            "previewLimit": 50,
-            "server": "mak-vse-pyday-rg-psql-fs.postgres.database.azure.com",
-            "port": 5432,
-            "askForPassword": true,
-            "name": "Azure database",
-            "driver": "PostgreSQL",
-            "database": "postgres",
-            "username": "ps_admin"
         }
     ]
 }
