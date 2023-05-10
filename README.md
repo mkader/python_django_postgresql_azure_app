@@ -41,6 +41,7 @@ Azure Cloud Database for Web Apps  with Django
             python3 -m pip install -r requirements.txt
             Run DB migrations: python3 manage.py migrate
             Run the local server: python3 manage.py runserver
+            Check SQLTools Local Database (Make sure that .vscode/settings.json show match exactly like .env to connect local db)
 
         Using Django admin
             Create a superuser: python manage.py createsuperuser , Login to /admin
