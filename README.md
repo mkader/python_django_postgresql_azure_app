@@ -1,12 +1,14 @@
 Azure Cloud Database for Web Apps  with Django
 
-    Django honeyspot is a security feature in Django, which is a Python-based web framework. The honeyspot feature is designed to protect 
-    web forms against spam and automated attacks by creating a "honeypot" field that is invisible to human users but visible to bots. 
-    Bots that try to fill out the honeypot field are considered to be spam and their submissions are rejected.
+    Django honeyspot is a security feature in Django, which is a Python-based web framework. 
+    The honeyspot feature is designed to protect web forms against spam and automated attacks 
+    by creating a "honeypot" field that is invisible to human users but visible to bots. Bots 
+    that try to fill out the honeypot field are considered to be spam and their submissions are rejected.
 
     Writing Django Apps
     
-        Django framework : an external library & framework for server-side code. Includes an ORM for database interaction.
+        Django framework : an external library & framework for server-side code. Includes 
+        an ORM for database interaction.
 
         Apps written in Django:
             Coursera (originally, now Scala+Play)
@@ -14,8 +16,9 @@ Azure Cloud Database for Web Apps  with Django
             Pinterest (originally, now Flask)
             Eventbrite
 
-        Django web app structure - a collection of "apps" that each have their own models, views, and templates. 
-        Each app has its own folder. In this app, we have a single app called "restaurant_review": models.py, urls.py, views.py, admin.py
+        Django web app structure - a collection of "apps" that each have their own models, 
+        views, and templates. Each app has its own folder. In this app, we have a single 
+        app called "restaurant_review": models.py, urls.py, views.py, admin.py
 
         Django ORM
             Define models (models.py):
@@ -40,7 +43,8 @@ Azure Cloud Database for Web Apps  with Django
                 }
             }
 
-        Check SQLTools Local Database (Make sure that .vscode/settings.json show match exactly like .env to connect local db)
+        Check SQLTools Local Database (Make sure that .vscode/settings.json show match exactly 
+        like .env to connect local db)
         
         Running a Django app
             python3 -m pip install -r requirements.txt
@@ -55,8 +59,8 @@ Hosting Django apps on Azure
 
     App Service + PostgreSQL inside VNet (Virtua Network) (App inside VNet with Postgres)
        
-       Put both the progress server and the web app inside the virtual net, give the postgres service (called a private DNS Zone) 
-       that enables the web app to talk to it. 
+       Put both the progress server and the web app inside the virtual net, give the postgres 
+       service (called a private DNS Zone) that enables the web app to talk to it. 
 
        Give each of them their own subnet inside the v-net.
        
@@ -75,10 +79,12 @@ Hosting Django apps on Azure
             "-s" option means to mute the output and only display errors.
             "-S" option means to show errors if they occur.
             "-L" option means to follow redirects if any.
-        "|" (pipe) is a cmd-line operator,redirects the o/p of the cmd on the left to the i/p of the cmd on the right.
+        "|" (pipe) is a cmd-line operator,redirects the o/p of the cmd on the left to 
+            the i/p of the cmd on the right.
         "bash" is a cmd-line interpreter used to execute the script that installs the Azure CLI.
     
-        The cmd downloads the script that installs the Azure CLI and executes it in the Docker container during the build process.
+        The cmd downloads the script that installs the Azure CLI and executes it in the 
+        Docker container during the build process.
 
     Azure Developer CLI (azd): This new CLI tool helps with all steps of the dev cycle:
         Step	        Command
@@ -95,10 +101,12 @@ Hosting Django apps on Azure
 
         https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/make-azd-compatible?pivots=azd-convert
 
-    azd up: First provisions, then deploys. Only re-provisions when Bicep resource definitions have changed.
+    azd up: First provisions, then deploys. Only re-provisions when Bicep resource 
+            definitions have changed.
 
-    The Bicep language: is an infrastructure-as-code (IAC) language, similar to Terraform but designed for Azure. 
-    Bicep declaratively defines Azure cloud resources. Install the Bicep extension for VS Code to write bicep files.
+    The Bicep language: is an infrastructure-as-code (IAC) language, similar to Terraform 
+    but designed for Azure. Bicep declaratively defines Azure cloud resources. Install the 
+    Bicep extension for VS Code to write bicep files.
         
     https://azure.github.io/awesome-azd/
 
@@ -121,3 +129,22 @@ Hosting Django apps on Azure
 
     No longer need the resources, delete them (everything in the resource group: azd down
 
+Django + App Service (No VNet) : https://github.com/pamelafox/django-quiz-app
+    Uses firewall rules to limit access to the server to only Azure IPs, and stores password in key vault.
+    Architecture diagram: Azure Web App, PostgreSQL server, Key Vault
+    ![djano_no_vnet](https://github.com/mkader/python_django_postgresql_azure_app/assets/3132680/3b8ffb36-5565-4ce7-9752-1f77324bd9b3)
+    
+Django + App Service + Redis : github.com/pamelafox/cookiecutter-django-output
+    Uses Redis as backend for cache and Celery, plus Azure storage for static assets and media uploads.
+    Architecture diagram: Azure Web App, PostgreSQL server, Redis, Storage
+    ![diagram_cookiecutter](https://github.com/mkader/python_django_postgresql_azure_app/assets/3132680/711e7dfe-f8e2-42b2-b88c-7b2a074fd22d)
+    
+Django + App Service + Storage: github.com/tonybaloney/django-on-azure  
+    Uses Azure storage containers for static assets and media uploads, plus Azure Monitor and Azure Load Testing.
+    Architecture diagram: Azure Web App, PostgreSQL server, VNet, Storage, Load Testing
+    <img width="1057" alt="diagram_djangoworkshop" src="https://github.com/mkader/python_django_postgresql_azure_app/assets/3132680/05b29737-971c-4102-bec4-cb5701230378">
+
+Django + Azure Container Apps: github.com/Azure-Samples/azure-django-postgres-aca
+    Deploys a containerized version of the previous app.
+    Architecture diagram: Azure Container Apps, Postgres
+    ![diagram_acadjango](https://github.com/mkader/python_django_postgresql_azure_app/assets/3132680/4c2db806-60fc-4b51-a0f4-9d5ddfdfa15d)
