@@ -1,6 +1,8 @@
 Azure Cloud Database for Web Apps  with Django
 
-    Django honeyspot is a security feature in Django, which is a Python-based web framework. The honeyspot feature is designed to protect web forms against spam and automated attacks by creating a "honeypot" field that is invisible to human users but visible to bots. Bots that try to fill out the honeypot field are considered to be spam and their submissions are rejected.
+    Django honeyspot is a security feature in Django, which is a Python-based web framework. The honeyspot feature is designed to protect 
+    web forms against spam and automated attacks by creating a "honeypot" field that is invisible to human users but visible to bots. 
+    Bots that try to fill out the honeypot field are considered to be spam and their submissions are rejected.
 
     Writing Django Apps
     
@@ -12,7 +14,8 @@ Azure Cloud Database for Web Apps  with Django
             Pinterest (originally, now Flask)
             Eventbrite
 
-        Django web app structure - a collection of "apps" that each have their own models, views, and templates. Each app has its own folder. In this app, we have a single app called "restaurant_review": models.py, urls.py, views.py, admin.py
+        Django web app structure - a collection of "apps" that each have their own models, views, and templates. 
+        Each app has its own folder. In this app, we have a single app called "restaurant_review": models.py, urls.py, views.py, admin.py
 
         Django ORM
             Define models (models.py):
@@ -52,7 +55,8 @@ Hosting Django apps on Azure
 
     App Service + PostgreSQL inside VNet (Virtua Network) (App inside VNet with Postgres)
        
-       Put both the progress server and the web app inside the virtual net, give the postgres service (called a private DNS Zone) that enables the web app to talk to it. 
+       Put both the progress server and the web app inside the virtual net, give the postgres service (called a private DNS Zone) 
+       that enables the web app to talk to it. 
 
        Give each of them their own subnet inside the v-net.
        
@@ -93,7 +97,8 @@ Hosting Django apps on Azure
 
     azd up: First provisions, then deploys. Only re-provisions when Bicep resource definitions have changed.
 
-    The Bicep language: is an infrastructure-as-code (IAC) language, similar to Terraform but designed for Azure. Bicep declaratively defines Azure cloud resources. Install the Bicep extension for VS Code to write bicep files.
+    The Bicep language: is an infrastructure-as-code (IAC) language, similar to Terraform but designed for Azure. 
+    Bicep declaratively defines Azure cloud resources. Install the Bicep extension for VS Code to write bicep files.
         
     https://azure.github.io/awesome-azd/
 
@@ -102,6 +107,8 @@ Hosting Django apps on Azure
     http://blog.pamelafox.org/
     
     https://pamelafox.github.io/my-py-talks/pyday-databases/#/38
+    
+    https://github.com/Azure-Samples - use lab.
     
     Terminal, type:
         azd
